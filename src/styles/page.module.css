@@ -1,0 +1,9 @@
+.page_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+.page_size{
+    width: 70%;
+}
