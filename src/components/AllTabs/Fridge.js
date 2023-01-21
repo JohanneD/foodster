@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from "./../../styles/Tabs/tabs.module.css";
+import "./../../styles/Tabs/tabs.css";
 
 function Fridge(){
   return (
-    <div className={styles.Fridge}>
+    <div className="fridge">
       <p>Fridge</p>
     </div>
   );

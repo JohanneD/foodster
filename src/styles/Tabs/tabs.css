@@ -1,4 +1,4 @@
-.Tabs {
+.tabs {
     width: 100%;
     height: auto;
     min-height: 400px;
@@ -13,13 +13,13 @@
 }
 
 .tabs_list {
-    width: 60%;
+    width: 80%;
     margin: 0 auto 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid #39A2DB;
-    border-radius: 2rem;
+    border: 1px solid #333;
+    border-radius: 1rem;
     padding-left: 0px;
     @media (max-width: 768px) {
       width: 90%;
@@ -33,8 +33,9 @@
     text-align: center;
     cursor: pointer;
     transition: all 0.7s;
-    border-bottom-left-radius: 2rem;
-    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    color: black;
   }
 
   .tabs_list li:nth-child(2) {
@@ -45,19 +46,19 @@
 
   .tabs_list li:nth-child(3) {
     border-radius: 0;
-    border-bottom-right-radius: 2rem;
-    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
   }
 
   .tabs_list li:hover {
-    background: rgba(50, 224, 196, 0.15);
+    background: rgba(15, 90, 15, 0.5);
   }
 
   .tabs_list li.active {
-    background: rgba(50, 224, 196, 0.15);
+    background: rgba(15, 90, 15, 0.5);
   }
 
-  .Fridge p, .Freezer p, .Cabinet p {
+  .fridge p, .freezer p, .cabinet p {
     font-size: 2rem;
     text-align: center;
     color: black;

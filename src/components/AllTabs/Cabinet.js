@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from "./../../styles/Tabs/tabs.module.css";
+import "./../../styles/Tabs/tabs.css";
 
 function Cabinet(){
   return (
-    <div className={styles.Cabinet}>
+    <div className="cabinet">
       <p>Cabinet</p>
     </div>
   );

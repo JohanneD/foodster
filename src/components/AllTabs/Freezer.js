@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from "./../../styles/Tabs/tabs.module.css";
+import "./../../styles/Tabs/tabs.css";
 
 function Freezer(){
   return (
-    <div className={styles.Freezer}>
+    <div className="freezer">
       <p>Freezer</p>
     </div>
   );
