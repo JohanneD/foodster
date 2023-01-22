@@ -58,8 +58,4 @@
     background: rgba(15, 90, 15, 0.5);
   }
 
-  .fridge p, .freezer p, .cabinet p {
-    font-size: 2rem;
-    text-align: center;
-    color: black;
-  }
+  
