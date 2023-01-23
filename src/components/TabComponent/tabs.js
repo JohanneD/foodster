@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import Cabinet from "../AllTabs/Cabinet";
 import Freezer from "../AllTabs/Freezer";
 import Fridge from "../AllTabs/Fridge";
@@ -8,6 +8,7 @@ import TabNavItem from "./tabNavItem";
 
 function Tabs(){
   const [activeTab, setActiveTab] = useState("tab1");
+
 
     return (
       <div className="tabs">

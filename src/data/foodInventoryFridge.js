@@ -8,7 +8,7 @@ export var foodInventoryFridge = [
     {
         id: "2",
         name: "Milk",
-        expiration: "07/02/2023",
+        expiration: "23/01/2023",
         amount: "1",
     },
     {

@@ -8,7 +8,7 @@ function Cabinet(){
     <div className="cabinet">
       {foodInventoryCabinet.map((data, key) => {
           return (
-            <InventoryListItem id={data.id} name={data.name} expiration={data.expiration} amount={data.amount} />
+            <InventoryListItem key={key} id={data.id} name={data.name} expiration={data.expiration} amount={data.amount} />
           );
         })}
     </div>
