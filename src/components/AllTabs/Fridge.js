@@ -9,31 +9,47 @@ function Fridge(){
   const setUpdate = (id, name, expiration, amount) => {
     console.log("in set update");
     console.log(name, expiration, amount)
-    let newList = listInventory.map(item => {
+    let newList = [...listInventory]
+    listInventory.forEach((item, index) => {
       if (item.id === id) {
-        item.name = String(name);
-        console.log(item.name, name)
-        item.expiration = String(expiration);
-        item.amount = String(amount);
+        newList[index] = {
+          id: id,
+          name: name,
+          expiration: expiration,
+          amount: amount
+        }
+        foodInventoryFridge[index] = {
+          id: id,
+          name: name,
+          expiration: expiration,
+          amount: amount
+        }
       }
-      return listInventory;
-    })
-    console.log(newList);
+    }
+    )
     setListInventory(newList);
   }
 
   const handleDelete = (id) => {
     console.log("delete clicked")
     const newList = listInventory.filter((item) => item.id !== id);
-
     setListInventory(newList);
+
+    var index = foodInventoryFridge.findIndex(e => e.id = id);
+    if (index !== -1) {
+      foodInventoryFridge.splice(index, 1);
+    } else {
+      console.log("Item not found in appGlobal.ObjProduct");
+    }
+    //console.log(newList)
+    console.log(listInventory)
   }
 
   return (
     <div className="fridge">
       {listInventory.map((data, key) => {
           return (
-            <InventoryListItem key={key} id={data.id} name={data.name} expiration={data.expiration} amount={data.amount} handleDelete={handleDelete} setUpdate={setUpdate}/>
+            <InventoryListItem key={data.id} id={data.id} name={data.name} expiration={data.expiration} amount={data.amount} handleDelete={handleDelete} setUpdate={setUpdate}/>
           );
         })}
     </div>

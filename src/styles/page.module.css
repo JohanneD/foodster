@@ -2,8 +2,22 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 0;
   }
 
 .page_size{
     width: 70%;
 }
+
+@media screen and (max-width: 700px) {
+  .page_size {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .page_size {
+    width: 100%;
+  }
+}
+
