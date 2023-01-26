@@ -1,7 +1,7 @@
 
   function toDaysUntil(expiration){
     const current = new Date();
-    var diffDays = "";
+    let diffDays = "";
     if (expiration !== ""){
         const date1 = new Date(expiration.split('/').reverse().join('-'));
         const date2 = new Date(`${current.getFullYear()}/${current.getMonth()+1}/${current.getDate()}`);
@@ -24,7 +24,7 @@
 
   function sortInventory(type, list){
     //sorting
-    var foodFridge = list.sort((a, b) => {
+    let foodFridge = list.sort((a, b) => {
     if (type === "expiration"){
         if (toDaysUntil(a.expiration) < toDaysUntil(b.expiration)) {
             return -1;

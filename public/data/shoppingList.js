@@ -1,4 +1,4 @@
-export var foodInventoryCabinet = [
+export let foodInventoryCabinet = [
     {
         id: "1",
         name: "Pasta",
