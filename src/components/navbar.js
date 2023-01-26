@@ -6,7 +6,7 @@ function Navbar(){
     return(
         <div className={styles.navigation_bar}>
             <li className={styles.navigation_bar_item}>
-                <Link className={styles.navigation_bar_item_link} to="/">My Inventoy</Link>
+                <Link className={styles.navigation_bar_item_link} to="/">My Inventory</Link>
             </li>
             <li className={styles.navigation_bar_item}>
                 <Link className={styles.navigation_bar_item_link} to="/shoppinglist">Shoppinglist</Link>

@@ -1,5 +1,5 @@
 
-function toDaysUntil(expiration){
+  function toDaysUntil(expiration){
     const current = new Date();
     var diffDays = "";
     if (expiration !== ""){
@@ -48,4 +48,4 @@ function toDaysUntil(expiration){
   return foodFridge;
   }
 
-  export {toDaysUntil, sortInventory};
+  export {toDaysUntil,sortInventory};
