@@ -5,6 +5,8 @@ import HeaderInvetory from "../ListItems/HeaderInvetory.js";
 
 function Freezer({sortItems, listInventoryFreezer, handleDelete, setUpdate}){
 
+  //Here is the Freezer content with header and List. Pass all nessesary data and functions
+  //down to the InventoryListItem, which is the component that actually show the data.
   return (
     <div className="freezer">
       <HeaderInvetory sortItems={sortItems} type={"Freezer"}/>

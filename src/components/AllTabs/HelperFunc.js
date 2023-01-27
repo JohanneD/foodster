@@ -1,4 +1,5 @@
-
+//This file include 2 helper functions, the toDaysUntil which computes how many days
+//the expiration date is from todays date.
   function toDaysUntil(expiration){
     const current = new Date();
     let diffDays = "";
@@ -21,7 +22,7 @@
     return diffDays;
   }
 
-
+//and the sortInventory which sort the list items according to the type we pass in
   function sortInventory(type, list){
     //sorting
     let foodFridge = list.sort((a, b) => {
@@ -48,4 +49,6 @@
   return foodFridge;
   }
 
+  //this is how you export multple components from a file in react 
+  //if you only want to export one you usually use export default <name of func>
   export {toDaysUntil,sortInventory};

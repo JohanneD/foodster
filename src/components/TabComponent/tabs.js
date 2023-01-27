@@ -9,10 +9,13 @@ import {sortInventory} from "./../AllTabs/HelperFunc.js";
 
 function Tabs(){
   const [activeTab, setActiveTab] = useState("tab1");
+
+  /* Here is the the lists for the different tabs */
   const [listInventoryFridge, setListInventoryFridge] = useState([]);
   const [listInventoryFreezer, setListInventoryFreezer] = useState([]);
   const [listInventoryCabinet, setListInventoryCabinet] = useState([]);
 
+  /* This function gets the data from the JSON fiels */
   const getData=(url, key)=>{
     fetch(url
     ,{
@@ -26,14 +29,21 @@ function Tabs(){
         return response.json();
       })
       .then(function(myJson) {
+        /* Here i check if localStorage for the different key is empty, as i do not want
+        to change the localStorage if i have already added the list, as i want to keep 
+        the storage as it is when we refresh. */
         if (!localStorage.getItem(key)){
           localStorage.setItem(key, JSON.stringify(myJson));
-          //setData(myJson)
           console.log(JSON.parse(localStorage.getItem(key)))
         }
       });
   }
 
+  /* UseEffect is a nice react hook that can run code on certain conditions. If i 
+  write a useEffect and in the bottom [], that here is empty, i add a variable. The 
+  useEffect will run and do something every time the variable is changed
+  But here since the [] are empty, this useEffect will only be ran when the page is
+  redered. So this one will e.g. be ran everytime we refresh the page. */
   useEffect(()=>{
     getData("./data/foodInventoryFridge.json", "Fridge");
     getData("./data/foodInventoryFreezer.json", "Freezer");
@@ -44,6 +54,8 @@ function Tabs(){
 
   },[])
 
+  /* this funcion sorts the list on the name and here is a case on type so i know
+  which list to sort */
   function sortItems(name, type){
     let newList = [];
     switch (type) {
@@ -67,6 +79,9 @@ function Tabs(){
     }
   }
 
+  /* This is the delete function, here i look for the id of the item to know which item
+  to delete. Also here i add in a switch case for the different list types. And then 
+  update the correct localStorage  */
   const handleDelete = (id, key) => {
       let newList = [];
       switch (key) {
@@ -88,6 +103,9 @@ function Tabs(){
       localStorage.setItem(key, JSON.stringify(newList));
     }
 
+  /* This is the update function, here i look for the id of the item to know which item
+  to edit. Also added in a switch case for the different list types. And then 
+  update the correct localStorage  */
   const setUpdate = (id, name, expiration, amount, key) => {
       let newList = [];
       switch (key) {
@@ -142,6 +160,7 @@ function Tabs(){
       localStorage.setItem(key, JSON.stringify(newList));
     }
 
+  /* This is the functionality for adding */
   const addItem = (name, expiration, amount, key) => {
       let newList = [...listInventoryFridge]
       newList.push({id: listInventoryFridge.length+1, name: name, expiration: expiration, amount:amount});
@@ -154,11 +173,14 @@ function Tabs(){
     return (
       <div className="tabs">
         <ul className="tabs_list">
+          {/* This is the tab where we switch between the content */}
             <TabNavItem title="Fridge" id="tab1" activeTab={activeTab} setActiveTab={setActiveTab} />
             <TabNavItem title="Freezer" id="tab2" activeTab={activeTab} setActiveTab={setActiveTab} />
             <TabNavItem title="Cabinet" id="tab3" activeTab={activeTab} setActiveTab={setActiveTab} />
         </ul>
         <div>
+          {/* This is were the actual content is shown. Since i save the data of the list in useStats
+          here, i have to pass down the different list to the different content types. */}
           <TabContent id="tab1" activeTab={activeTab} >
             <Fridge sortItems={sortItems} 
                     listInventoryFridge={listInventoryFridge} 

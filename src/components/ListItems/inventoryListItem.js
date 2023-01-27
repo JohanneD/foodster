@@ -6,16 +6,25 @@ import delimage from "../../Images/delete.png";
 import checkImage from "../../Images/check.png"
 
 function InventoryListItem({ id, name, expiration, amount, handleDelete, setUpdate, type}){
+    /*useStates are almost like variables in React, but the great thing about them is
+    that they can track changes. if you want the value from a useState you use the 
+    first parameter (e.g. changedName), if you want to change the value you use the 
+    second paramenter (e.g. setChangedName). This is also the most common way to name
+    the paramenters with the name and the set in front of the name.*/
     const [isEditing, setIsEditing] = useState(false);
     const [changedName, setChangedName] = useState(name);
     const [changedExpiration, setChangedExpiration] = useState(expiration);
     const [changedAmount, setChangedAmount] = useState(amount);
 
+    /* this function calles the setUpdate which saves the updated text. */
     const saveEdit = () => {
         setIsEditing(false);
         setUpdate(id, changedName, changedExpiration, changedAmount, type);
     }
 
+    /* Since in this function i kind of want to show 2 different views. So here i have 
+       two different return statements. One that returns the edit view of the item and 
+        one that return the ordinary list item. The return here is for the edit view*/
     if (isEditing){
         return(
             <div className="inventory_container_edit">
@@ -44,6 +53,7 @@ function InventoryListItem({ id, name, expiration, amount, handleDelete, setUpda
         );
     }
 
+    /* Here is the ordinary inventory view. */
   return (
     <div className='inventory_container'>
         <div className="inventory_name">

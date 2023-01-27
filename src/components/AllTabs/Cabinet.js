@@ -4,7 +4,9 @@ import InventoryListItem from '../ListItems/inventoryListItem';
 import HeaderInvetory from "../ListItems/HeaderInvetory.js";
 
 function Cabinet({sortItems, listInventoryCabinet, handleDelete, setUpdate}){
-
+  
+  //Here is the Cabinet content with header and List. Pass all nessesary data and functions
+  //down to the InventoryListItem, which is the component that actually show the data.
   return (
     <div className="cabinet">
       <HeaderInvetory sortItems={sortItems} type={"Cabinet"}/>
