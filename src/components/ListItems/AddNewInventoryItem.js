@@ -13,6 +13,7 @@ function AddNewInventoryItem(){
     const [changedAmount, setChangedAmount] = useState("");
 
     const saveNewItem = () => {
+        //here should call the addItem function and pass the right parameters the save button will work for now it will not save the new item 
         console.log("saving");
     }
 

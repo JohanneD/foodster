@@ -34,11 +34,11 @@ function Tabs(){
         the storage as it is when we refresh. */
         if (!localStorage.getItem(key)){
           localStorage.setItem(key, JSON.stringify(myJson));
+          //setData(myJson)
           console.log(JSON.parse(localStorage.getItem(key)))
         }
       });
   }
-
   /* UseEffect is a nice react hook that can run code on certain conditions. If i 
   write a useEffect and in the bottom [], that here is empty, i add a variable. The 
   useEffect will run and do something every time the variable is changed
@@ -53,7 +53,6 @@ function Tabs(){
     setListInventoryCabinet(JSON.parse(localStorage.getItem("Cabinet")));
 
   },[])
-
   /* this funcion sorts the list on the name and here is a case on type so i know
   which list to sort */
   function sortItems(name, type){
@@ -78,7 +77,6 @@ function Tabs(){
         break;
     }
   }
-
   /* This is the delete function, here i look for the id of the item to know which item
   to delete. Also here i add in a switch case for the different list types. And then 
   update the correct localStorage  */
@@ -102,8 +100,7 @@ function Tabs(){
       }
       localStorage.setItem(key, JSON.stringify(newList));
     }
-
-  /* This is the update function, here i look for the id of the item to know which item
+ /* This is the update function, here i look for the id of the item to know which item
   to edit. Also added in a switch case for the different list types. And then 
   update the correct localStorage  */
   const setUpdate = (id, name, expiration, amount, key) => {
@@ -159,13 +156,44 @@ function Tabs(){
       }
       localStorage.setItem(key, JSON.stringify(newList));
     }
-
   /* This is the functionality for adding */
-  const addItem = (name, expiration, amount, key) => {
-      let newList = [...listInventoryFridge]
-      newList.push({id: listInventoryFridge.length+1, name: name, expiration: expiration, amount:amount});
-      console.log(listInventoryFridge);
-      setListInventoryFridge(newList);
+    const addItem = (name, expiration, amount, key) => {
+      let newList = [];
+      switch (key) {
+        case "Fridge":
+          newList = [...listInventoryFridge];
+          newList.push({
+            id: listInventoryFridge.length+1,
+            name: name,
+            expiration: expiration,
+            amount: amount
+          });
+          setListInventoryFridge(newList);
+          break;
+        case "Freezer":
+          newList = [...listInventoryFreezer];
+          newList.push({
+            id: listInventoryFreezer.length+1,
+            name: name,
+            expiration: expiration,
+            amount: amount
+          });
+          setListInventoryFreezer(newList);
+          break;
+        case "Cabinet":
+          newList = [...listInventoryCabinet];
+          listInventoryCabinet.
+          newList.push({
+            id: listInventoryCabinet.length+1,
+            name: name,
+            expiration: expiration,
+            amount: amount
+          });
+          setListInventoryCabinet(newList);
+          break;
+        default:
+          break;
+      }
       localStorage.setItem(key, JSON.stringify(newList));
     }
 
@@ -173,7 +201,6 @@ function Tabs(){
     return (
       <div className="tabs">
         <ul className="tabs_list">
-          {/* This is the tab where we switch between the content */}
             <TabNavItem title="Fridge" id="tab1" activeTab={activeTab} setActiveTab={setActiveTab} />
             <TabNavItem title="Freezer" id="tab2" activeTab={activeTab} setActiveTab={setActiveTab} />
             <TabNavItem title="Cabinet" id="tab3" activeTab={activeTab} setActiveTab={setActiveTab} />
