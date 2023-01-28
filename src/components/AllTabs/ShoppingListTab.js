@@ -10,7 +10,7 @@ function ShoppingListTab({sortItems, listInventoryShoppingListTab, handleDelete,
   return (
     <div className="freezer">
       <HeaderInvetory sortItems={sortItems} type={"Freezer"}/>
-      {listInventoryFridge.map((data, key) => {
+      {listInventoryShoppingListTab.map((data, key) => {
           return (
             <InventoryListItem 
             key={data.id} 
