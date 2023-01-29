@@ -27,7 +27,7 @@
     //sorting
     let foodFridge = list.sort((a, b) => {
     if (type === "expiration"){
-        if (toDaysUntil(a.expiration) < toDaysUntil(b.expiration)) {
+        if (parseInt(toDaysUntil(a.expiration)) < parseInt(toDaysUntil(b.expiration))) {
             return -1;
           }
     }else if(type === "name"){
