@@ -17,9 +17,9 @@
             return "-" + diffDays;
           }
         }
-        
+        return diffDays-1;
     };
-    return diffDays-1;
+    return diffDays;
   }
 
 //and the sortInventory which sort the list items according to the type we pass in
