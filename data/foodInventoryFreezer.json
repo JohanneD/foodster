@@ -1,0 +1,32 @@
+[
+    {
+      "id": "1",
+      "name": "Blueberries",
+      "expiration": "",
+      "amount": "1"
+    },
+    {
+        "id": "2",
+        "name": "Chicken",
+        "expiration": "",
+        "amount": "5"
+    },
+    {
+        "id": "3",
+        "name": "Bread",
+        "expiration": "",
+        "amount": "1"
+    },
+    {
+        "id": "4",
+        "name": "Wok Mix",
+        "expiration": "",
+        "amount": "1"
+    },
+    {
+        "id": "5",
+        "name": "Ice Cream",
+        "expiration": "",
+        "amount": "1"
+    }
+  ]

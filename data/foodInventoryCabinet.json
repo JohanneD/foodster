@@ -1,0 +1,56 @@
+[
+    {
+      "id": "1",
+      "name": "Pasta",
+      "expiration": "2023-06-22",
+      "amount": "2"
+    },
+    {
+        "id": "2",
+        "name": "Potatos",
+        "expiration": "",
+        "amount": "8"
+    },
+    {
+        "id": "3",
+        "name": "Oats",
+        "expiration": "2023-04-23",
+        "amount": "2"
+    },
+    {
+        "id": "4",
+        "name": "Nesquick Cerial",
+        "expiration": "2023-09-11",
+        "amount": "2"
+    },
+    {
+        "id": "5",
+        "name": "Salt",
+        "expiration": "",
+        "amount": "1"
+    },
+    {
+        "id": "6",
+        "name": "Pepper",
+        "expiration": "",
+        "amount": "1"
+    },
+    {
+        "id": "7",
+        "name": "Coffee",
+        "expiration": "",
+        "amount": "2"
+    },
+    {
+        "id": "8",
+        "name": "Peanutbutter",
+        "expiration": "2023-06-14",
+        "amount": "1"
+    },
+    {
+        "id": "9",
+        "name": "Nutella",
+        "expiration": "2023-07-18",
+        "amount": "1"
+    }
+  ]

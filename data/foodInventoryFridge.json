@@ -1,0 +1,56 @@
+[
+    {
+      "id": "1",
+      "name": "Eggs",
+      "expiration": "2023-03-22",
+      "amount": "6"
+    },
+    {
+        "id": "2",
+        "name": "Milk",
+        "expiration": "2023-01-23",
+        "amount": "1"
+    },
+    {
+        "id": "3",
+        "name": "Yoghurt",
+        "expiration": "2023-02-23",
+        "amount": "3"
+    },
+    {
+        "id": "4",
+        "name": "Butter",
+        "expiration": "2023-03-05",
+        "amount": "1"
+    },
+    {
+        "id": "5",
+        "name": "Cucumber",
+        "expiration": "",
+        "amount": "1"
+    },
+    {
+        "id": "6",
+        "name": "Ham",
+        "expiration": "2023-03-22",
+        "amount": "1"
+    },
+    {
+        "id": "7",
+        "name": "Cheese",
+        "expiration": "2023-02-25",
+        "amount": "1"
+    },
+    {
+        "id": "8",
+        "name": "Onion",
+        "expiration": "",
+        "amount": "3"
+    },
+    {
+        "id": "9",
+        "name": "Orange Juice",
+        "expiration": "2023-03-18",
+        "amount": "1"
+    }
+  ]
