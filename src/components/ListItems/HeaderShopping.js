@@ -17,7 +17,7 @@ function HeaderShopping({sorton, setIsAddingNew}){
           <div title="Sort on Amount" className="header_text" onClick={() => sorton("Expiration")}>Amount</div>
         </div>
         <div className="header_inventory_add">
-        <div title="Add new inventory" onClick={() => setIsAddingNew(true)}><img src={newImage} alt="add new item" height="50px"/></div>
+          <div title="Add new inventory" className='header_inventory_add_button' onClick={() => setIsAddingNew(true)}><img src={newImage} alt="add new item" height="50px"/></div>
         </div>
       </div>
   );

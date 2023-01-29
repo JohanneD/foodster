@@ -8,18 +8,18 @@
         const date2 = new Date(`${current.getFullYear()}/${current.getMonth()+1}/${current.getDate()}`);
   
         if (date2.toLocaleDateString("en-US")===date1.toLocaleDateString("en-US")){
-          diffDays = "0";
+          return "0";
         }else{
           const diffTime = Math.abs(date2 - date1);
   
           diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-          if (date2.toLocaleDateString("en-US")>=date1.toLocaleDateString("en-US")){
-            diffDays = "-" + diffDays;
+          if (date2>=date1){
+            return "-" + diffDays;
           }
         }
         
     };
-    return diffDays;
+    return diffDays-1;
   }
 
 //and the sortInventory which sort the list items according to the type we pass in
@@ -35,11 +35,7 @@
             return -1;
           }
     }else if(type === "amount"){
-        if (a.amount < b.amount) {
-            return -1;
-          }
-    }else if(type === "id"){
-        if (a.id < b.id) {
+        if (parseInt(a.amount) < parseInt(b.amount)) {
             return -1;
           }
     }
