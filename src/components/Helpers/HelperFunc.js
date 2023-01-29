@@ -3,8 +3,8 @@
   function toDaysUntil(expiration){
     const current = new Date();
     let diffDays = "";
-    if (expiration !== ""){
-        const date1 = new Date(expiration.split('/').reverse().join('-'));
+    if (expiration !== "" && expiration !== null){
+        const date1 = new Date(expiration);
         const date2 = new Date(`${current.getFullYear()}/${current.getMonth()+1}/${current.getDate()}`);
   
         if (date2.toLocaleDateString("en-US")===date1.toLocaleDateString("en-US")){
@@ -31,7 +31,7 @@
             return -1;
           }
     }else if(type === "name"){
-        if (a.name < b.name) {
+        if (a.name.toLowerCase() < b.name.toLowerCase()) {
             return -1;
           }
     }else if(type === "amount"){

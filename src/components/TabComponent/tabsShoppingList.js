@@ -1,11 +1,7 @@
-import React, { useState, useEffect} from "react";
-import Cabinet from "../AllTabs/Cabinet";
-import Freezer from "../AllTabs/Freezer";
+import React, { useState} from "react";
 import Fridge from "../AllTabs/Fridge";
-import ShoppingListTab from "../AllTabs/ShoppingListTab";
 import "./../../styles/Tabs/tabs.css"
 import TabContent from "./tabContent";
-import TabNavItem from "./tabNavItem";
 import {sortInventory} from "../AllTabs/HelperFunc.js";
 
 function TabsShoppingList(){
@@ -15,47 +11,12 @@ function TabsShoppingList(){
   const [listInventoryFridge, setListInventoryFridge] = useState([]);
   const [listInventoryFreezer, setListInventoryFreezer] = useState([]);
   const [listInventoryCabinet, setListInventoryCabinet] = useState([]);
-  const [listInventoryShoppingList, setListInventoryShoppingList] = useState([]);
-
-  /* This function gets the data from the JSON fiels */
-  const getData=(url, key)=>{
-    fetch(url
-    ,{
-      headers : { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-       }
-    }
-    )
-      .then(function(response){
-        return response.json();
-      })
-      .then(function(myJson) {
-        /* Here i check if localStorage for the different key is empty, as i do not want
-        to change the localStorage if i have already added the list, as i want to keep 
-        the storage as it is when we refresh. */
-        if (!localStorage.getItem(key)){
-          localStorage.setItem(key, JSON.stringify(myJson));
-          console.log(JSON.parse(localStorage.getItem(key)))
-        }
-      });
-  }
 
   /* UseEffect is a nice react hook that can run code on certain conditions. If i 
   write a useEffect and in the bottom [], that here is empty, i add a variable. The 
   useEffect will run and do something every time the variable is changed
   But here since the [] are empty, this useEffect will only be ran when the page is
   redered. So this one will e.g. be ran everytime we refresh the page. */
-  useEffect(()=>{
-    getData("./data/foodInventoryFridge.json", "Fridge");
-    getData("./data/foodInventoryFreezer.json", "Freezer");
-    getData("./data/foodInventoryCabinet.json", "Cabinet");
-
-    getData("./data/foodInventoryShoppingList.json", "ShoppingListTab");
-    setListInventoryShoppingList(JSON.parse(localStorage.getItem("ShoppingListTab")));
-
-    //setListInventoryFridge(JSON.parse(localStorage.getItem("Fridge")))
-  },[])
 
   /* this funcion sorts the list on the name and here is a case on type so i know
   which list to sort */

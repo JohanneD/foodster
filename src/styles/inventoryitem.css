@@ -39,16 +39,6 @@
     align-items: center;
 }
 
-@media (max-width: 500px) {
-    .inventory_expiration{
-        width: 30%;
-    }
-    .inventory_amount{
-        width: 5%;
-    }
-    
-  }
-
 .inventory_amount {
     display: flex;
     color: black;
@@ -58,7 +48,7 @@
 }
 
 .inventory_edit {
-    width: auto;
+    width: 90px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -79,7 +69,6 @@
 .edit_item_button{
     width: auto;
     height: 70%;
-    margin-right: 5px;
 }    
 
 .edit_item_button:hover{
@@ -97,7 +86,7 @@
 }
 
 .inventory_input_edit{
-    width: 96px;
+    width: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,27 +113,10 @@
 }
 
 .header_inventory_add{
-    width: 95px;
+    width: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
-    height: 50px;
-}
-
-.header_inventory_add_button{
-    display: flex;
-    text-align: center;
-    width: 55px;
-    height: 45px;
-    border: 2px solid #333;
-    font-weight: 600;
-    border-radius: 3rem;
-    padding-left: 12px;
-    padding-right: 12px;
-    padding-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 30px;
 }
 
 .header_inventory_add_button:hover{
@@ -162,3 +134,22 @@
     cursor: pointer;
     text-decoration: underline;
 }
+
+
+@media (max-width: 500px) {
+    .inventory_expiration{
+        width: 30%;
+    }
+    .inventory_amount{
+        width: 10%;
+    }
+    .header_text{
+        font-size: medium;
+        font-weight: 400;
+    }
+    .header_inventory_add{
+        justify-content: end;
+        width: 70px;
+    }
+    
+  }

@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import "./../../styles/inventoryitem.css";
-import {toDaysUntil} from "../AllTabs/HelperFunc.js";
+import {toDaysUntil} from "../Helpers/HelperFunc.js";
 import editimage from "../../Images/edit.png";
 import delimage from "../../Images/delete.png";
 import checkImage from "../../Images/check.png"
 
-function InventoryListItem({ id, name, expiration, amount, handleDelete, setUpdate, type}){
+function InventoryListItem({ id, name, expiration, amount, deleteItem, updateItem, type}){
     /*useStates are almost like variables in React, but the great thing about them is
     that they can track changes. if you want the value from a useState you use the 
     first parameter (e.g. changedName), if you want to change the value you use the 
@@ -19,7 +19,7 @@ function InventoryListItem({ id, name, expiration, amount, handleDelete, setUpda
     /* this function calles the setUpdate which saves the updated text. */
     const saveEdit = () => {
         setIsEditing(false);
-        setUpdate(id, changedName, changedExpiration, changedAmount, type);
+        updateItem(id, changedName, changedExpiration, changedAmount);
     }
 
     /* Since in this function i kind of want to show 2 different views. So here i have 
@@ -34,14 +34,14 @@ function InventoryListItem({ id, name, expiration, amount, handleDelete, setUpda
                     value={changedName}
                     onChange={(e)=>setChangedName(e.target.value)}/>
                 </div>
-                <div className="inventory_expiration">
-                    <input type="text"  
+                {type==="Shoppinglist" ? (null) : <div className="inventory_expiration">
+                    <input type="date"  
                         className="textInput" 
                         value={changedExpiration}
                         onChange={(e)=>setChangedExpiration(e.target.value)}/>
-                </div>
+                </div>}
                 <div className="inventory_amount">
-                    <input type="text"
+                    <input type="number"
                         className="textInput" 
                         value={changedAmount}
                         onChange={(e)=>setChangedAmount(e.target.value)}/>
@@ -59,15 +59,15 @@ function InventoryListItem({ id, name, expiration, amount, handleDelete, setUpda
         <div className="inventory_name">
             <p>{name}</p>
         </div>
-        <div className="inventory_expiration">
+        {type==="Shoppinglist" ? (null) : <div className="inventory_expiration">
             <p>{toDaysUntil(expiration)}</p>
-        </div>
+        </div>}
         <div className="inventory_amount">
             <p>{amount}</p>
         </div>
         <div className="inventory_edit">
             <div title="Edit Item" className="edit_item_button" onClick={() => setIsEditing(true)}><img src={editimage} alt="edit" height="50px"/></div>
-            <div title="Delete Item" className="delete_item_button" onClick={() => handleDelete(id, type)}><img src={delimage} alt="edit" height="50px"/></div>
+            <div title="Delete Item" className="delete_item_button" onClick={() => deleteItem(id)}><img src={delimage} alt="edit" height="50px"/></div>
         </div>
     {/*<button className='add_to_shoppinglist' onClick={()=>addToShopping()}>Need more</button>*/}
     </div>
