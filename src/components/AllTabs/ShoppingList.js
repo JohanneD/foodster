@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import "./../../styles/Tabs/tabs.css";
+import "./../../styles/inventoryitem.css"
 import HeaderShopping from "../ListItems/HeaderShopping";
 import getData from '../Helpers/getdata.js';
 import AddNewInventoryItem from '../ListItems/AddNewInventoryItem';
@@ -38,7 +38,7 @@ function ShoppingList(){
   //Here is the shoppinglist content with header and List. Pass all nessesary data and functions
   //down to the InventoryListItem, which is the component that actually show the data.
   return (
-    <div>
+    <div className='shoppinglist_container'>
       <HeaderShopping sorton={sorton} setIsAddingNew={setIsAddingNew} type={"Shoppinglist"}/>
       {isAddingNew ? (<AddNewInventoryItem saveNew={saveNew} setIsAddingNew={setIsAddingNew} type="Shoppinglist"/>) : (null)}
       {shoppingListItems.map((data, key) => {
