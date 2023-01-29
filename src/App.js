@@ -10,8 +10,8 @@ function App() {
       <BrowserRouter>
           <Navbar />
           <Routes>
-              <Route path="/" exact element= {<Inventoy />} />
-              <Route path="/shoppinglist" element={<ShoppingListPage/>} />
+              <Route path="./" exact element= {<Inventoy />} />
+              <Route path="./shoppinglist" element={<ShoppingListPage/>} />
           </Routes>
       </BrowserRouter>
   );
